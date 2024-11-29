@@ -1,0 +1,28 @@
+{
+  "name": "hexlet-object",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "object training project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "npx prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andrey-Yanchuk/hexlet-js.git"
+  },
+  "author": "Yanchuk Andrey orpiy@mail.ru",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Andrey-Yanchuk/hexlet-js/issues"
+  },
+  "homepage": "https://github.com/Andrey-Yanchuk/hexlet-js#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.15.0",
+    "eslint": "^9.15.0",
+    "eslint-plugin-import": "^2.31.0",
+    "globals": "^15.12.0",
+    "prettier": "^3.4.1"
+  }
+}
