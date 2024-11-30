@@ -12,3 +12,6 @@ export const normalize = (object) => {
     object.description = object.description.toLowerCase();
     return object;
 };
+/*-----------------------------------------------------*/
+export const is = (obj1, obj2) => obj1.name === obj2.name && obj1.state === obj2.state && obj1.website === obj2.website;
+/*-----------------------------------------------------*/
