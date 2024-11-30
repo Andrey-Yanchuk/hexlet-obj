@@ -1,5 +1,6 @@
 // index.js
-import { normalize, is } from './exported-functions.js';
+import { normalize, is, getDomainInfo } from './exported-functions.js';
+import _ from "lodash";
 /*-----------------------------------------------------*/
 const lesson = {
   name: 'ДеструКТУРИЗАЦИЯ',
@@ -12,6 +13,9 @@ const company1 = { name: 'Hexlet', state: 'moderating', website: 'https://hexlet
 const company2 = { name: 'CodeBasics', state: 'published', website: 'https://code-basics.com' };
 const company3 = { name: 'Hexlet', state: 'published', website: 'https://hexlet.io' };
 const company4 = { name: 'Hexlet', state: 'published', website: 'https://hexlet.io' };
-
 console.log(is(company1, company2));
 console.log(is(company3, company4));
+/*-----------------------------------------------------*/
+console.log(getDomainInfo('yandex.ru'));
+console.log(getDomainInfo('https://hexlet.io'));
+console.log(getDomainInfo('http://google.com'));
