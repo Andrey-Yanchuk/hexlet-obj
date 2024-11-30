@@ -15,3 +15,20 @@ export const normalize = (object) => {
 /*-----------------------------------------------------*/
 export const is = (obj1, obj2) => obj1.name === obj2.name && obj1.state === obj2.state && obj1.website === obj2.website;
 /*-----------------------------------------------------*/
+
+export const getDomainInfo = (link) => {
+    let scheme = 'http';
+    let name = link;
+    if (link.startsWith('https://')) {
+        scheme = 'https';
+        name = link.replace('https://', '');
+    }
+    if (link.startsWith('http://')) {
+        scheme = 'http';
+        name = link.replace('http://', '');
+    }
+    return {
+        scheme,
+        name
+    };
+};
