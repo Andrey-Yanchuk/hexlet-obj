@@ -1,7 +1,9 @@
 // index.js
-import example from "./example.json" assert { type: "json" };
-const getExampleJson = (object) => {
-  return object;
+import { normalize } from './exported-functions.js';
+
+const lesson = {
+  name: 'ДеструКТУРИЗАЦИЯ',
+  description: 'каК удивитЬ колек',
 };
-export default getExampleJson;
-console.log(getExampleJson(example));
+normalize(lesson);
+console.log(lesson);
