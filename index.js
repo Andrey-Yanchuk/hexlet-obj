@@ -1,5 +1,11 @@
 // index.js
-import { normalize, is, getDomainInfo, countWords, } from "./exported-functions.js";
+import {
+  normalize,
+  is,
+  getDomainInfo,
+  countWords,
+  pick,
+} from "./exported-functions.js";
 // import _ from "lodash";
 /*-----------------------------------------------------*/
 const lesson = {
@@ -41,3 +47,14 @@ const text2 = "another one sentence with strange Words words";
 console.log(countWords(""));
 console.log(countWords(text1));
 console.log(countWords(text2));
+/*-----------------------------------------------------*/
+const data = {
+  user: "ubuntu",
+  cores: 4,
+  os: "linux",
+};
+console.log(pick(data, ["user"]));
+console.log(pick(data, ["user", "os"]));
+console.log(pick(data, []));
+console.log(pick(data, ["none", "cores"]));
+/*-----------------------------------------------------*/
