@@ -44,3 +44,14 @@ export const countWords = (sentence) => {
   return result;
 };
 /*-----------------------------------------------------*/
+export const pick = (srcObj, arrPropertyNames) => {
+  const result = {};
+  const entries = Object.entries(srcObj);
+  for (const [key, value] of entries) {
+    if (arrPropertyNames.includes(key)) {
+      result[key] = value;
+    }
+  }
+  return result;
+};
+/*-----------------------------------------------------*/
