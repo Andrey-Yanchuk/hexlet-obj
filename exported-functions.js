@@ -91,3 +91,14 @@ export const fill = (srcObject, listArr, data) => {
   // return Object.assign(srcObject, _.pick(data, listArr));
 };
 /*-----------------------------------------------------*/
+export const cloneDeep = (data) => {
+  if (typeof data !== "object" || data === null) {
+    return data;
+  }
+  const result = {};
+  for (const [key, value] of Object.entries(data)) {
+    result[key] = cloneDeep(value);
+  }
+  return result;
+};
+/*-----------------------------------------------------*/
