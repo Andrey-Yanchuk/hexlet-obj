@@ -7,6 +7,7 @@ import {
   pick,
   get,
   fill,
+  cloneDeep,
 } from "./exported-functions.js";
 // import _ from "lodash";
 /*-----------------------------------------------------*/
@@ -95,4 +96,18 @@ console.log(fill(company, ["name"], dataFour));
 // { name: 'Hexlet', state: 'moderating' }
 console.log(fill(company, [], dataFour));
 // { name: 'Hexlet', state: 'published'}
+/*-----------------------------------------------------*/
+const dataFive = {
+  key: "value",
+  key2: {
+    key: "innerValue",
+    innerKey: {
+      anotherKey: "anotherValue",
+    },
+  },
+};
+const result = cloneDeep(dataFive);
+console.log(result.key2 !== dataFive.key2); // true
+console.log(result.key2.innerKey !== dataFive.key2.innerKey);
+console.log(result);
 /*-----------------------------------------------------*/
