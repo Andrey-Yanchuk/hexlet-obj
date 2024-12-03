@@ -102,3 +102,12 @@ export const cloneDeep = (data) => {
   return result;
 };
 /*-----------------------------------------------------*/
+export const make = (name, additionalProperties = {}) => {
+  if (!name) {
+    throw new Error("The company name must be specified.");
+  }
+  const createdAt = new Date().toISOString().replace("T", " ").split(".")[0]; // Формат YYYY-MM-DD HH:MM:SS
+  const defaultValues = { state: "moderating", createdAt };
+  return { name, ...defaultValues, ...additionalProperties };
+};
+/*-----------------------------------------------------*/
