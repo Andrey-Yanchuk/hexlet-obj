@@ -5,6 +5,7 @@ import {
   getDomainInfo,
   countWords,
   pick,
+  get,
 } from "./exported-functions.js";
 // import _ from "lodash";
 /*-----------------------------------------------------*/
@@ -57,4 +58,27 @@ console.log(pick(data, ["user"]));
 console.log(pick(data, ["user", "os"]));
 console.log(pick(data, []));
 console.log(pick(data, ["none", "cores"]));
+/*-----------------------------------------------------*/
+const dataTwo = {
+  user: "ubuntu",
+  hosts: {
+    0: {
+      name: "web1",
+    },
+    1: {
+      name: "web2",
+      null: 3,
+      active: false,
+    },
+  },
+};
+// const dataThree = 'I`m string'; // test for data type error object
+console.log(get(dataTwo, ["undefined"])); // null
+console.log(get(dataTwo, ["user"])); // 'ubuntu'
+console.log(get(dataTwo, ["user", "ubuntu"])); // null
+console.log(get(dataTwo, ["hosts", 1, "name"])); // 'web2'
+console.log(get(dataTwo, ["hosts", 0])); // { name: 'web1' }
+console.log(get(dataTwo, ["hosts", 1, null])); // 3
+console.log(get(dataTwo, ["hosts", 1, "active"])); // false
+// console.log(get(dataThree, "hosts", 0, "name")); // test for data type error object
 /*-----------------------------------------------------*/
