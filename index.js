@@ -8,6 +8,7 @@ import {
   get,
   fill,
   cloneDeep,
+  make,
 } from "./exported-functions.js";
 // import _ from "lodash";
 /*-----------------------------------------------------*/
@@ -110,4 +111,9 @@ const result = cloneDeep(dataFive);
 console.log(result.key2 !== dataFive.key2); // true
 console.log(result.key2.innerKey !== dataFive.key2.innerKey);
 console.log(result);
+/*-----------------------------------------------------*/
+console.log(make("Hexlet"));
+// { name: 'Hexlet', state: 'moderating', createdAt: <тут текущая дата> }
+console.log(make("Hexlet", { website: "hexlet.io", state: "published" }));
+// { name: 'Hexlet', website: 'hexlet.io', state: 'published', createdAt: <тут текущая дата> }
 /*-----------------------------------------------------*/
