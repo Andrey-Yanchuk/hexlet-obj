@@ -55,3 +55,28 @@ export const pick = (srcObj, arrPropertyNames) => {
   return result;
 };
 /*-----------------------------------------------------*/
+export const get = (srcObject, pathArr) => {
+  if (!Array.isArray(pathArr)) {
+    throw new Error("Path must be an array of keys");
+  }
+  if (typeof srcObject !== "object") {
+    throw new Error("The passed variable or constant must be an object");
+  }
+  let result = srcObject;
+  for (const key of pathArr) {
+    if (
+      key === null ||
+      key === undefined ||
+      typeof result !== "object" ||
+      !(key in result)
+    ) {
+      return null;
+    }
+    result = result[key];
+  }
+  return result;
+};
+// export const get = (srcObject, pathArr) => {
+//     return _.get(srcObject, pathArr, null);
+// }
+/*-----------------------------------------------------*/
