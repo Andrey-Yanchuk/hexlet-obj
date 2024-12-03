@@ -6,6 +6,7 @@ import {
   countWords,
   pick,
   get,
+  fill,
 } from "./exported-functions.js";
 // import _ from "lodash";
 /*-----------------------------------------------------*/
@@ -81,4 +82,17 @@ console.log(get(dataTwo, ["hosts", 0])); // { name: 'web1' }
 console.log(get(dataTwo, ["hosts", 1, null])); // 3
 console.log(get(dataTwo, ["hosts", 1, "active"])); // false
 // console.log(get(dataThree, "hosts", 0, "name")); // test for data type error object
+/*-----------------------------------------------------*/
+const company = {
+  name: null,
+  state: "moderating",
+};
+const dataFour = {
+  name: "Hexlet",
+  state: "published",
+};
+console.log(fill(company, ["name"], dataFour));
+// { name: 'Hexlet', state: 'moderating' }
+console.log(fill(company, [], dataFour));
+// { name: 'Hexlet', state: 'published'}
 /*-----------------------------------------------------*/
