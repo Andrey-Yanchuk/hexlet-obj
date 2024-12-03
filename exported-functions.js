@@ -80,3 +80,14 @@ export const get = (srcObject, pathArr) => {
 //     return _.get(srcObject, pathArr, null);
 // }
 /*-----------------------------------------------------*/
+export const fill = (srcObject, listArr, data) => {
+  return Object.assign(
+    srcObject,
+    listArr.length === 0 ? data : _.pick(data, listArr),
+  );
+  // if (listArr.length === 0) {
+  //     return Object.assign(srcObject, data);
+  // }
+  // return Object.assign(srcObject, _.pick(data, listArr));
+};
+/*-----------------------------------------------------*/
