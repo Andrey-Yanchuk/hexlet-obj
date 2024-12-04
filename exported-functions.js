@@ -111,3 +111,15 @@ export const make = (name, additionalProperties = {}) => {
   return { name, ...defaultValues, ...additionalProperties };
 };
 /*-----------------------------------------------------*/
+export const getSortedNames = (usersList) => {
+  if (!Array.isArray(usersList)) {
+    throw new Error("Input must be an array!");
+  }
+  const result = [];
+  for (const user of usersList) {
+    const { name } = user;
+    result.push(name);
+  }
+  return result.sort();
+};
+/*-----------------------------------------------------*/
