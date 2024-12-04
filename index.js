@@ -9,6 +9,7 @@ import {
   fill,
   cloneDeep,
   make,
+  getSortedNames,
 } from "./exported-functions.js";
 // import _ from "lodash";
 /*-----------------------------------------------------*/
@@ -116,4 +117,12 @@ console.log(make("Hexlet"));
 // { name: 'Hexlet', state: 'moderating', createdAt: <тут текущая дата> }
 console.log(make("Hexlet", { website: "hexlet.io", state: "published" }));
 // { name: 'Hexlet', website: 'hexlet.io', state: 'published', createdAt: <тут текущая дата> }
+/*-----------------------------------------------------*/
+const users = [
+  { name: "Bronn", gender: "male", birthday: "1973-03-23" },
+  { name: "Reigar", gender: "male", birthday: "1973-11-03" },
+  { name: "Eiegon", gender: "male", birthday: "1963-11-03" },
+  { name: "Sansa", gender: "female", birthday: "2012-11-03" },
+]; // getSortedNames(users); // ['Bronn', 'Eiegon', 'Reigar', 'Sansa']
+console.log(getSortedNames(users));
 /*-----------------------------------------------------*/
