@@ -1,7 +1,7 @@
 // exported-functions.js
 import _ from "lodash";
 // import example from "./example.json" assert { type: "json" };
-import { bstr, buf, str } from "crc-32";
+import { str } from "crc-32";
 /*-----------------------------------------------------*/
 export const getExampleJson = (object) => {
   return object;
@@ -139,7 +139,7 @@ export const set = (map, key, value) => {
     }
     return false;
   }
-  // Добавляем 
+  // Добавляем
   map[index] = [key, value];
   return true;
 };
@@ -155,3 +155,4 @@ export const getValues = (map, key, defaultValue = null) => {
   }
   return defaultValue;
 };
+/*-----------------------------------------------------*/
