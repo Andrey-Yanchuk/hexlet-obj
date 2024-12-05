@@ -1,6 +1,7 @@
 // exported-functions.js
 import _ from "lodash";
 // import example from "./example.json" assert { type: "json" };
+import { bstr, buf, str } from "crc-32";
 /*-----------------------------------------------------*/
 export const getExampleJson = (object) => {
   return object;
@@ -123,3 +124,34 @@ export const getSortedNames = (usersList) => {
   return result.sort();
 };
 /*-----------------------------------------------------*/
+// Создание объектов без объектов)
+const makeDictionary = () => [];
+export const map = makeDictionary();
+export const set = (map, key, value) => {
+  const hash = str(String(key));
+  const index = Math.abs(hash) % 1000;
+  // Если в map уже существует такой же индекс, то мы проверяем ключи на перезапись или коллизию(когда ключи разные но хеш один)
+  if (map[index]) {
+    // Если ключ внутреннего массива(map) и ключ переданного массива равны, тогда перезаписываем значение, если же ключи разные - это коллизия
+    if (map[index][0] === key) {
+      map[index][1] = value;
+      return true;
+    }
+    return false;
+  }
+  // Добавляем 
+  map[index] = [key, value];
+  return true;
+};
+export const getValues = (map, key, defaultValue = null) => {
+  const hash = str(String(key)); // Преобразуем ключ в строку и получаем хеш
+  const index = Math.abs(hash) % 1000; // Рассчитываем индекс для массива
+  // Проверяем, существует ли запись по этому индексу
+  if (map[index]) {
+    // Если ключ совпадает, возвращаем значение
+    if (map[index][0] === key) {
+      return map[index][1];
+    }
+  }
+  return defaultValue;
+};
