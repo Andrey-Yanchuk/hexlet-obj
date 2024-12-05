@@ -25,5 +25,8 @@
     "globals": "^15.12.0",
     "lodash": "^4.17.21",
     "prettier": "^3.4.1"
+  },
+  "dependencies": {
+    "crc-32": "https://cdn.sheetjs.com/crc-32-latest/crc-32-latest.tgz"
   }
 }
