@@ -10,6 +10,9 @@ import {
   cloneDeep,
   make,
   getSortedNames,
+  map,
+  set,
+  getValues,
 } from "./exported-functions.js";
 // import _ from "lodash";
 /*-----------------------------------------------------*/
@@ -126,3 +129,18 @@ const users = [
 ]; // getSortedNames(users); // ['Bronn', 'Eiegon', 'Reigar', 'Sansa']
 console.log(getSortedNames(users));
 /*-----------------------------------------------------*/
+let resultat = getValues(map, 'key');
+console.log(resultat); // => null
+resultat = getValues(map, 'key', 'default_value');
+console.log(resultat); // => "default_value"
+set(map, 'key2', 'value2');
+resultat = getValues(map, 'key2');
+console.log(resultat); // => "value2"
+// console.log(set(map, 'keyses'));
+// console.log(set(map, 'key', 35));
+// console.log(set(map, 'key', 44));
+// console.log(set(map, 'aaaaa0.462031558722291'));
+// // Хеши одиннаковые
+// console.log(set(map, 'aaaaa0.0585754039730588')); // Этот хеш по идее должен вывести false и не записываться
+// console.log(map);
+// console.log(getValues(map, 'keys'));
